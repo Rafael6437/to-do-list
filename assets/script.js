@@ -30,6 +30,27 @@ function createTask(text = '') {
   removeBtn.style.fontSize = '1.2rem';
   removeBtn.style.color = '#61715b';
 
+  //Cria um button para "confirmar" tarefa
+  const confirmTask = document.createElement('button');
+  confirmTask.textContent = '✔';
+
+  //Evento de transformar o input em paragrafo
+  confirmTask.addEventListener('click', () => {
+    const p = document.createElement('p');
+    p.textContent = taskText.value;
+    taskText.replaceWith(p);
+    confirmTask.remove();
+
+      //Evento para riscar o texto concluido
+    checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      p.style.textDecoration = 'line-through';
+    } else {
+       p.style.textDecoration = 'none'
+      }
+})
+  })
+
   // Adiciona evento para remover tarefa
   removeBtn.addEventListener('click', () => {
     tasksContainer.removeChild(taskItem);
@@ -44,8 +65,9 @@ function createTask(text = '') {
   // Monta estrutura
   taskItem.appendChild(checkbox);
   taskItem.appendChild(taskText);
+  taskItem.appendChild(confirmTask);
   taskItem.appendChild(removeBtn);
-
+  
   // Adiciona no container
   tasksContainer.appendChild(taskItem);
 }
