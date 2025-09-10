@@ -1,0 +1,110 @@
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #61715b; /* cor parecida com a imagem */
+    color: #e6f1de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .all-container {
+    background-color: #e6f1de;
+    color: #61715b;
+    border-radius: 15px;
+    padding: 20px 40px;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    overflow-y: auto; /* Permite a rolagem vertical */
+    max-height: 80vh; /* Limite a altura máxima do container */
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+}
+
+  .title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .date-input {
+    display: block;
+    margin: 0 auto 30px auto;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border: 1px solid #61715b;
+    border-radius: 5px;
+    width: 200px;
+    background-color: #f7f9f2;
+    color: #61715b;
+    text-align: center;
+    outline: none;
+  }
+
+  .tasks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .task-colum {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .task-item {
+    background-color: #d8e2d1;
+    border-radius: 8px;
+    padding: 12px 15px;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+  }
+
+  .task-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .task-item label {
+    flex: 1;
+    font-size: 1rem;
+    user-select: none;
+  }
+
+
+  @media (max-width: 930px) {
+    .tasks {
+        grid-template-columns: 1fr; /* Muda para uma coluna */
+    }
+
+    .all-container {
+        padding: 20px 10px; /* Ajusta o padding para telas menores */
+    }
+
+    .date-input {
+        width: 100%; /* Faz o input ocupar 100% da largura disponível */
+    }
+
+    .task-item {
+        min-width: auto; /* Remove a largura mínima para melhor ajuste */
+    }
+}
