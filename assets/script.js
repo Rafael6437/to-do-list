@@ -20,6 +20,7 @@ function createTask(text = '') {
   taskText.placeholder = 'Nova tarefa';
   taskText.value = text;
 
+  //Cria um X para que possa ser removida a task
   const removeBtn = document.createElement('button');
   removeBtn.textContent = '✖'; // um X para remover
   removeBtn.style.marginLeft = 'auto';
